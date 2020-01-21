@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thedimension/module/MainPage/MainPage.dart';
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
-  @override 
-    Size get preferredSize => new Size.fromHeight(kToolbarHeight);
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
   Widget build(BuildContext context) {
     return AppBar(
-      title: new Image.asset('image/logo.png'),
+      title: FlatButton(
+        child: new Image.asset('image/logo.png'),
+        onPressed: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (BuildContext context) => MainPage()));
+        },
+      ),
       actions: <Widget>[
         IconButton(
           icon: Icon(

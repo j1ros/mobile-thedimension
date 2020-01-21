@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thedimension/module/delivery/delivery.dart';
+import 'package:mobile_thedimension/module/news/news.dart';
+import 'package:mobile_thedimension/module/account/account.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -6,30 +9,45 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const <Widget>[
+        children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.white,
             ),
             child: Text(
               'Drawer Header',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 24,
               ),
             ),
           ),
           ListTile(
             leading: Icon(Icons.message),
-            title: Text('Messages'),
+            title: Text('Profile'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => AccountPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.account_circle),
-            title: Text('Profile'),
+            title: Text('News'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => NewsPage()));
+            },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: Icon(Icons.new_releases),
+            title: Text('Delivery'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => DeliveryPage()));
+            },
           ),
         ],
       ),
