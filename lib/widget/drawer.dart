@@ -10,15 +10,14 @@ class AppDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Text(
-              'Drawer Header',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
+          UserAccountsDrawerHeader(
+            accountName: Text("Vladimir Velichko"),
+            accountEmail: Text("j1ros@mail.ru"),
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: Colors.blue,
+              child: Text(
+                "V",
+                style: TextStyle(fontSize: 40.0),
               ),
             ),
           ),
